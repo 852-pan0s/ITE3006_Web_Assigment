@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Chinese Fiction 中國小說推薦網</title>
+    <link rel="stylesheet" href="./css/register.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/font.css">
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+</head>
+
+<body onresize="sizeDetect()" class="girlFont bg_img">
+
+
+    <!--   header-bar-->
+    <div class="pg-header">
+        <!--       menu-button-->
+        <a href="#" class="url_text" title="Categories">
+            <div class="menu-button" onclick="showMenu()">
+                <div class="menu-ico">
+                    <div class="menu-bar"></div>
+                    <div class="menu-bar"></div>
+                    <div class="menu-bar"></div>
+                </div>
+            </div>
+        </a>
+
+
+        <!--       website logo-->
+        <div id="logo" title="Chinese Fiction 中國小說推薦網">
+            <a href="index.html" class="url_text">
+                <div class="logo ico"><img src="./img/web_icon.png" alt=""></div>
+                <div id="web_name" class="logo no_copy">Chinese Fiction</div>
+            </a>
+
+        </div>
+
+        <!--    account button    login-->
+        <div class="header-button right" title="Account" onmouseenter="showAcOpt()" onmouseleave="hideAcOpt()">
+            <img class="ico" src="./img/user_icon.png" alt="">
+
+        </div>
+        <!--        Google search icon-->
+        <div id="search_btn" class="right header-button">
+            <!--       Google search-->
+            <form action="https://www.google.com/search" method="get" onsubmit="return searchCheck()">
+                <div id="search_bar" class="">
+                    <input id="search_input" class="hidden" title="search" type="text" name="q" placeholder="造化之門" list="search_recommend">
+                    <a href="#" onclick="hideSearchBar()">
+                        <div id="cancel_icon" class="cancel_icon" style="top:17px;right: 3px; width: 0;"></div>
+                    </a>
+                </div>
+                <input type="submit" id="search_submit" class="hide" title="Google Search">
+            </form>
+            <a href="#">
+                <img class="ico" id="search_icon" src="./img/search_button_icon.png" alt="" onclick="showSearchBar()">
+            </a>
+            <datalist id="search_recommend">
+                <option value="造化之門" />
+                <option value="頭號偶像" />
+                <option value="全職法師" />
+            </datalist>
+        </div>
+    </div>
+
+
+    <!--body-->
+    <div id="pg-body" class="pg-body">
+        <!--    shadow layer-->
+        <div id="pg-shadow" class="pg-shadow hidden">
+            <div class="pg-shadow" onclick="hideShadow()"></div>
+        </div>
+
+        <!-- category menu-->
+        <div id="menu" class="menu">
+
+            <div class="category no_copy">Category</div>
+            <div>
+                <a href="#" class="url_text">
+                    <div class="option" title="Fantasy" onclick="changeIfraem('fantasy.html');hideShadow()">
+                        <div> Fantasy</div>
+                        <div class="cover"><img src="./img/book-cover/fantasy.jfif" alt=""></div>
+                    </div>
+                </a>
+                <a href="#" class="url_text">
+                    <div class="option" title="City" onclick="changeIfraem('city.html');hideShadow()">
+                        <div>City</div>
+                        <div class="cover"><img src="./img/book-cover/city.jfif" alt=""></div>
+                    </div>
+                    <div class="clear"></div>
+                </a>
+
+                <a href="#" class="url_text">
+                    <div class="option" title="Xian Xia" onclick="changeIfraem('xianxia.html');hideShadow()">
+                        <div>Xian Xia</div>
+                        <div class="cover"><img src="./img/book-cover/XianXia.jfif" alt=""></div>
+                    </div>
+                    <div class="clear"></div>
+                </a>
+                <a href="#" class="url_text">
+                    <div class="option" title="Science" onclick="changeIfraem('science.html');hideShadow()">
+                        <div>Science</div>
+                        <div class="cover"><img src="./img/book-cover/science.jfif" alt=""></div>
+
+                    </div>
+                    <div class="clear"></div>
+                </a>
+                <a href="#" class="url_text">
+                    <div class="option" title="Game" onclick="changeIfraem('game.html');hideShadow()">
+                        <div>Game</div>
+                        <div class="cover"><img src="./img/book-cover/game.jfif" alt=""></div>
+                    </div>
+                    <div class="clear"></div>
+                </a>
+                <a href="#" class="url_text">
+                    <div class="option" title="History" onclick="changeIfraem('history.html');hideShadow()">
+                        <div>History</div>
+                        <div class="cover"><img src="./img/book-cover/history.jfif" alt=""></div>
+                    </div>
+                    <div class="clear"></div>
+                </a>
+            </div>
+        </div>
+
+        <!--    account option login menu -->
+        <ul id="ac_opt" onmouseenter="showAcOpt()" onmouseleave="hideAcOpt()">
+            <a href="#" class="url_text">
+                <li class="option" title="Sign in" onclick="showSignIn();hideAcOpt()">Sign in</li>
+            </a>
+            <a href="#" class="url_text">
+                <li class="option" title="Sign up" onclick="showSignUp();hideAcOpt()">Sign up</li>
+            </a>
+        </ul>
+
+        <!--        main content-->
+        <iframe id="main" src="home.html" frameborder="0"></iframe>
+
+        <!--        sign in form user login-->
+        <div id="signIn" class="">
+            <div class="margin  no_copy">
+                <div class="text left">
+                    User Login
+                    <a href="#">
+                        <div class="cancel_icon right" onclick="hideShadow()"></div>
+                    </a>
+                </div>
+            </div>
+            <div class="signIn-size left">
+                <form action="" method="post" onsubmit="return checkAccount()">
+                    <div>
+                        <div id="invalid" class="title_margin red hide">*Invaild Account</div>
+                        <div id="empty_ac" class="title_margin red hide">*Username cannot be empty!</div>
+                        <div class="left" style="width:30%;">
+                        </div>
+                        <div class="margin">
+                            <input id="ac" class="input" type="text" name="username" title="Username">
+                            <div class="left-icon userIcon" title="Username"></div>
+                            <a href="#" onclick="cleanUser()">
+                                <div class="right-icon clean-user-icon" title="Clear input"></div>
+                            </a>
+                        </div>
+                        <div id="empty_pwd" class="title_margin red hide">*Password cannot be empty!</div>
+                        <div class="margin">
+                            <input id="pwd" class="input" type="password" name="password" title="Password">
+                            <div class="left-icon passwordIcon" title="Password"></div>
+                            <a href="#" onclick="showPW()">
+                                <div id="pw_icon" class="right-icon show_pw_icon" title="Show/hide password"></div>
+                            </a>
+                        </div>
+                        <div class="margin autoLogin">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <th><input id="autoLogin" type="checkbox"></th>
+                                        <td><label for="autoLogin">Auto Login</label></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="margin">
+                            <input class="submit" type="submit" value="Sign in" onclick="checkAccount()">
+                        </div>
+                    </div>
+                </form>
+                <div class="left">No account?&nbsp;</div>
+                <div id="signUpOnSignIn" class="left no_copy" onclick="hideSignIn();showSignUp();hideText()"><a href="#">Sign up</a></div>
+            </div>
+        </div>
+
+
+        <!--        sign up form register-->
+        <div id="signUp">
+            <div class="margin  no_copy">
+                <div id="signUp_header" class="text left hide">
+                    User Sign Up
+                    <a href="#">
+                        <div class="cancel_icon right" onclick="hideShadow()"></div>
+                    </a>
+                </div>
+            </div>
+            <div class="signIn-size left">
+
+                <div style="height: 20px; margin-top: 50px">
+                    <div class="left">Has an account?&nbsp;&nbsp;</div>
+                    <div id="signUpOnSignIn" class="left no_copy" onclick="hideSignUp();showSignIn();hideText();"><a href="#">Sign in</a></div>
+                </div>
+
+
+
+                <!--            <form action="" onsubmit="return checkAccount()">-->
+                <form action="#" method="get" onsubmit="return reg_checkAccount()">
+                    <div>
+                        <div class="title_margin">
+                            <span class="red">*</span><span id="title_user"><label for="new_ac"> Username</label>
+                                <span id="new_empty_ac" class="hide"> cannot be empty!</span>
+                            </span>
+                        </div>
+                        <div class="left" style="width:30%;">
+                        </div>
+                        <div class="margin">
+                            <input id="new_ac" class="input" type="text" name="username" pattern="[a-zA-Z\d]{5,}" title="The length of username must be more than 5. Special symbols are not acceptable.">
+                            <label for="new_ac">
+                                <div class="left-icon userIcon" title="Username"></div>
+                            </label>
+                        </div>
+                        <div class="title_margin">
+                            <span class="red">*</span><span id="title_pwd">
+                                <label for="new_pwd">Password</label>
+                                <span id="new_empty_pwd" class="hide"> cannot be empty!</span>
+                            </span>
+
+                        </div>
+                        <div class="margin">
+
+                            <!--                       
+                       (?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}
+                       (?=) = check the word but not limit to the location of the word on the string.
+                       (?=.*[a-z]) = any character + one lower case letter.
+                       (?=.*[A-Z]) = any character + one capital letter.
+                       (?=.*[\d]) = any character + one digit.
+                       -->
+                            <input id="new_pwd" class="input" type="password" name="password" title="Password must contain at least one number, one lower case letter, one capital letter, the length of password must be more than 7. Special symbols are not acceptable." pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[\d])[a-zA-Z\d]{8,}$">
+                            <label for="new_pwd">
+                                <div class="left-icon passwordIcon" title="Password"></div>
+                            </label>
+                            <a href="#" onclick="reg_showPW()">
+                                <div id="reg_eye_icon" class="right-icon show_pw_icon" title="Show/hide password"></div>
+                            </a>
+                        </div>
+
+                        <div class="title_margin">
+                            <span class="red">*</span>
+                            <span id="title_gender">
+                                Gender
+                                <span id="new_empty_gender" class="hide"> cannot be empty!</span>
+                            </span>
+
+                        </div>
+
+                        <div class="margin">
+                            <input id="female" class="hide" type="radio" name="gender" value="F">
+                            <input id="male" class="hide" type="radio" name="gender" value="M">
+                            <span style="margin: 0 5px;">
+                                <a href="#" onclick="chooseGender('F')">
+                                    <img id="f_icon" src="./img/female_icon.png" title="Female">
+                                </a>
+                            </span>
+                            <span>
+                                <a href="#" onclick="chooseGender('M')">
+                                    <img id="m_icon" src="./img/male_icon.png" alt="dob" title="Male">
+                                </a>
+
+                            </span>
+                        </div>
+
+                        <div class="title_margin">
+                            <span><label for="dob">Date of birth</label></span>
+                        </div>
+
+                        <div class="margin">
+                            <input class="input" id="dob" type="date" name="dob" min="1997-01-01" max="2019-01-01">
+                            <div class="left-icon">
+                                <label for="dob"><img src="./img/dob_icon.png" alt="dob" title="Date of birth"></label>
+                            </div>
+                        </div>
+
+
+                        <div class="title_margin">
+                            <span class="red">*</span><span id="title_email">
+                                <label for="email">Email</label>
+                                <span id="new_empty_email" class="hide"> cannot be empty!</span>
+                            </span>
+
+                        </div>
+
+                        <div class="margin">
+                            <input class="input" id="email" type="email" name="email" title="Email">
+                            <div class="left-icon">
+                                <label for="email"><img src="./img/email_icon.png" alt=""></label>
+                            </div>
+                        </div>
+
+                        <div></div>
+                        <div class="margin">
+                            <span class="red">*</span><span id="title_fav"> What category do you like to read?</span><br>
+                            <table>
+                                <thead>
+                                </thead>
+                                <tbody id="favCategory">
+                                    <tr>
+                                        <td><input id="all" type="checkbox" onclick="chooseAll()"></td>
+                                        <td><label for="all">All</label></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input id="fantasy" type="checkbox" onclick="checkboxCount('fantasy')" value="f"></td>
+                                        <td><label for="fantasy">Fantasy</label></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input id="city" type="checkbox" onclick="checkboxCount('city')" value="c"></td>
+                                        <td><label for="city">City</label></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input id="xianxia" type="checkbox" onclick="checkboxCount('xianxia')" value="x"></td>
+                                        <td><label for="xianxia">Xian Xia (仙俠)</label></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input id="science" type="checkbox" onclick="checkboxCount('science')" value="s"></td>
+                                        <td><label for="science">Science</label></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input id="game" type="checkbox" onclick="checkboxCount('game')" value="g"></td>
+                                        <td><label for="game">Game</label></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input id="history" type="checkbox" onclick="checkboxCount('history')" value="h"></td>
+                                        <td><label for="history">History</label></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                        <div class="margin">
+                            <input class="submit" type="submit" value="Sign Up">
+                        </div>
+                        <div class="margin">
+                            <input id="reset" class="submit" type="button" value="Reset" onclick="sure(); chooseGender('n')">
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!--category menu on shadow-->
+    <a href="#" title="Close menu">
+        <div id="menu-button" class="onShadow hide" onclick="hideShadow()">
+            <div class="menu-ico">
+                <div class="menu-bar"></div>
+                <div class="menu-bar"></div>
+                <div class="menu-bar"></div>
+            </div>
+        </div>
+    </a>
+
+
+    <script src="./js/button.js"></script>
+    <script src="./js/register.js"></script>
+</body>
+
+</html>

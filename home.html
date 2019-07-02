@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/font.css">
+</head>
+
+<body onload="showAllImg()">
+    <div id="hot"></div>
+    <div class="top_cover">
+        <a href="#">
+            <div class="turnLeft" onclick="turnLeft()"></div>
+        </a>
+        <a href="#">
+            <div class="turnRight" onclick="turnRight()"></div>
+        </a>
+        
+        <a href="#"><div id="play_pause" onclick="playPause()"></div></a>
+
+        <div id="top_book_cover">
+            <!--       cover 0-->
+            <a href="#">
+                <div class="top_book_show" title="造化之門" onclick="chooseCenter(0)"></div>
+            </a>
+            <!--       cover 1-->
+            <a href="#">
+                <div class="top_book_show" title="唐朝工科生" onclick="chooseCenter(1)"></div>
+            </a>
+            <!--       cover 2-->
+            <a href="#">
+                <div class="top_book_show" title="全職法師" onclick="chooseCenter(2)"></div>
+            </a>
+            <!--       cover 3-->
+            <a href="#">
+                <div class="top_book_show" onclick="chooseCenter(3)"></div>
+            </a>
+            <!--       cover 4-->
+            <a href="#">
+                <div class="top_book_show" title="我能看見經驗值" onclick="chooseCenter(4)"></div>
+            </a>
+            <!--       cover 5-->
+            <a href="#">
+                <div class="top_book_show" title="頭號偶像" onclick="chooseCenter(5)"></div>
+            </a>
+        </div>
+    </div>
+    <div id="top_book_button">
+        <a href="#">
+            <div class="top_book_option" onclick="chooseCenter(0)"></div>
+        </a>
+        <a href="#">
+            <div class="top_book_option" onclick="chooseCenter(1)"></div>
+        </a>
+        <a href="#">
+            <div class="top_book_option" onclick="chooseCenter(2)"></div>
+        </a>
+        <a href="#">
+            <div class="top_book_option" onclick="chooseCenter(3)"></div>
+        </a>
+        <a href="#">
+            <div class="top_book_option" onclick="chooseCenter(4)"></div>
+        </a>
+        <a href="#">
+            <div class="top_book_option" onclick="chooseCenter(5)"></div>
+        </a>
+
+    </div>
+    <div class="text_padding">
+    <h1 class="girlFont">Welcome to Chinese Fiction Website!!</h1>
+    <div class="text font1">On This Website, you can know which chinese fictions are good to read and share your favorite chinese fiction to others.<br>
+    在這個網站中，會有很多中國小說推薦給您看啊!! 非精品不推薦!! <br>
+      別私藏，把您的收藏好書分享給大家吧 !!
+       </div>
+        
+    </div>
+    <script src="js/top_book_cover.js"></script>
+</body>
+</html>

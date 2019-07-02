@@ -1,0 +1,81 @@
+
+.fictionList {
+    margin: 20px;
+    height: 270px;
+    min-width: 550px;
+    padding: 5px;
+    transition: 0.5s;
+}
+
+#book_page1 {
+    position: absolute;
+    top:2px;
+    left:5px;
+    width:180px;
+    height: 240px;
+    background-color: white;
+    z-index: 3;
+    border: 3px solid #d9d9d9;
+}
+
+#book_page2 {
+    position: absolute;
+    top:2px;
+    left:5px;
+    width:185px;
+    height: 240px;
+    background-color: white;
+    z-index: 2;
+    border: 3px solid #d9d9d9;
+    box-shadow: 5px 0px 10px -2px #525252;
+}
+
+.cut{
+    height: 266px;
+    padding-right: 10px;
+}
+
+.cutLeft {
+    background-color: #c9f2da;
+    border-radius: 0 0 0 25%;
+    width:200px;
+}
+
+.cutRight {
+    background-color: #c6edd5;
+    width:330px;
+    border-radius: 0 25% 0 0;
+        overflow-y:auto;
+}
+
+
+
+.category_title {
+    height: 78px;
+    padding: 0 25px; 
+}
+.flex-center {
+    display: flex;
+    flex-flow: row wrap;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+
+
+@media only screen and (max-width: 1232px) {
+    .flex-center {
+    display: block;
+}
+
+
+    
+    .cutRight {
+        background-color: #b5f0cc;
+        width:60%;
+        min-width:330px;
+        border-radius: 0 25% 0 0;
+    }
+
+}
+
